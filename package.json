@@ -1,0 +1,19 @@
+{
+  "name": "rhsm-dbus-qe",
+  "version": "1.0.0",
+  "description": "Integration/Functional tests for RHSM DBus Service",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RedHatQE/rhsm-dbus-qe.git"
+  },
+  "author": "Jan Stavel @ RedHat",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RedHatQE/rhsm-dbus-qe/issues"
+  },
+  "homepage": "https://github.com/RedHatQE/rhsm-dbus-qe#readme"
+}
