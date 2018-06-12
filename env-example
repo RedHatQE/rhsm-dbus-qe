@@ -1,0 +1,11 @@
+export RHSM_SERVICES_URL=ws://centos7.subman.example.com:9091
+export SUBSCRIPTION_USER_NAME=testuser1
+export SUBSCRIPTION_PASSWORD=password
+export SUBSCRIPTION_ORG_ID=admin
+export SUBSCRIPTION_ACTIVATION_KEY_WITH_PARTIAL_SUBSCRIPTION=default_key
+export SUBSCRIPTION_PROXY_HOSTNAME=proxy-server.subman.example.com
+export SUBSCRIPTION_PROXY_PORT=3128
+export SUBSCRIPTION_PROXY_USER=proxyuser
+export SUBSCRIPTION_PROXY_PASSWORD=password
+export RHSM_STAGE_CANDLEPIN_URL=https://subscription.rhsm.stage.redhat.com/subscription
+export RHSM_TEST_CANDLEPIN_URL=https://candlepin.example.com:8443/candlepin
