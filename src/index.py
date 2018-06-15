@@ -8,9 +8,7 @@ import logging, asyncio, logging.config, json
 # irc-2.devel.redhat.com
 # irc.yyz.redhat.com
 # irc.eng.brq.redhat.com 6667
-#
-# 600Kc mamce
-#
+
 
 from rx import Observable
 from rx.subjects import Subject
