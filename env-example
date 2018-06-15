@@ -1,3 +1,4 @@
+PYTHONPATH=${PYTHONPATH}:${PWD}
 export COCKPIT_USER_NAME=root
 export COCKPIT_USER_PASSWORD=vagrant
 export COCKPIT_URL=https://centos7.subman.example.com:9090
