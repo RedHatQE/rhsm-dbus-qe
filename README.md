@@ -63,6 +63,14 @@ ssh root@centos7.example.com
 
 > Testware runs forever listening incomming signals. The only thing you have to run again and again is the right scenario.
 
+## Main Parts of this Repo
+
+ | user scenarion               | `./resouces/scenarion` |
+ | dbus tests                   | `./src/dbus`           |
+ | data types                   | `./src/types.py`       |
+ | streams used in the testware | `./src/streams.py`     |
+ | test suites                  | `./src/suite`          |
+
 ## What is the Benefit of Reactive Approach for Testing?
 
 > Reactive programming offers an easy way to data mine. It offers a pile of methods to transform,merge,aggregate streams of events.
