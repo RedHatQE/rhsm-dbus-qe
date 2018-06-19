@@ -30,7 +30,7 @@ The base requirement is
   - [Pipenv](https://github.com/pypa/pipenv)
 
 > An important part of the testing game is `RHSM-services` message broker. 
-> It is necessary to install in on a tested machine. see [https://github.com/RedHatQE/rhsm-services](RHSM Services Git Repo)
+> It is necessary to install in on a tested machine. see [RHSM Services Git Repo](https://github.com/RedHatQE/rhsm-services)
 
 ## Installation
 
