@@ -5,22 +5,23 @@ The service is a base communication layer for `subscription-manager`.
 
 `subscription-manager` is a tool that user entitles RedHat's content by.
 
-The tests uses `Python3.6` and `RxPy`. The code is base on `Reactive Programming` approach. You can read more about [Reactive Programming](http://reactivex.io)
+The tests uses `Python3.6` and `RxPy`. The code is based on [Reactive Programming](http://reactivex.io).
 
 The tests use a message broker [RHSM Services](https://github.com/RedHatQE/rhsm-services). It is a server that provides `websocket` services needed by real-time test analysis
 and `REST` based services for synchronous test operations. The main purpose of this broker is providing of real-time informations about a tested system.
 
-## Desing of the Testing Process
+## Desing of a Testing Process
 
 It is necessary to understand a way how this testing game is written before you run the tests.
 
 There are three main players in this testing game:
-- user scenario - a shell script or ansible script
-- message broker `RHSM Service` - a central piece of the game
-- a test - an observer that takes signals from the message broker and analyzes them 
+- =user scenario= - a shell script or ansible script
+- =message broker= `RHSM Service` - a central piece of the game
+- =a test= - an observer that takes signals from the message broker and analyzes them 
 
-*A testing process is driven by user scenarion* Shortly - a test does not run any action in a tested system. 
-It does not change a system state at all. It just receives signals from the system and analyzes them.
+> A testing process is driven by user scenarion. Shortly - a test does not run any action in a tested system. 
+> It does not change a system state at all. It just receives signals from the system and analyzes them.
+
 
    
 ## Requirements
@@ -98,4 +99,8 @@ In reactive way:
    - write user scenario
    - send informations from the system into testware
    - let testware shake it's way and analyze the informations
-   
+- this approach offers a new way to cooperate: 
+  reporters often send a bug with a short shell based scenario to reproduce a bug.
+  Tester can reuse the shell scenario and it is necessary to extend it by signals emitting only.
+
+> Reactive programming offers an easy way to data mine. It offers a pile of methods to transform,merge,aggregate streams of events.
