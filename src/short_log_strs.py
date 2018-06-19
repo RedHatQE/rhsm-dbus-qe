@@ -31,5 +31,4 @@ def _ (ts):
     return "\n".join(["{0} - {1} ({2})".format(colored_status(ts.result.status),
                                                ts.short_desc,
                                                ts.testsuite_id or '-'),
-                      "\t" + "".join([colored_short_status(tr.result.status) for tr in ts.testruns])
-    ])
+                      "\t" + "".join([colored_short_status(tr.result.status) for tr in ts.testruns])])
