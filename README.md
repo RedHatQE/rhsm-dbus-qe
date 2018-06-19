@@ -40,6 +40,9 @@ cd ~/src/rhsm-dbus-qe
 pipenv install
 ```
 
+> It is necessary to set `.env` file in the root directory. You can see an example of the file in the directory.
+> The file contains of properties used by the testware.
+
 ## Running
 
 The proper tests start once you run the right user scenario.
