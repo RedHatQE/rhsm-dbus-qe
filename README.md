@@ -65,12 +65,11 @@ ssh root@centos7.example.com
 
 ## What is the Benefit of Reactive Approach for Testing?
 
-> Reactive programming offers an easy way to data mine. It offers a pile of methods to transform,merge,aggregate strea
-ms of events.
+> Reactive programming offers an easy way to data mine. It offers a pile of methods to transform,merge,aggregate streams of events.
 
 You know - the most expensive task is to prepare a tested system into the right state.
 
-You know how a system is prepared in 'before suite' method of a testware and all tests 
+You know how a system is prepared in `before suite` method of a testware and all tests 
 in the test suite rely upon the state of the system the 'before suite' method prepared.
 But if some test change a system state (ie. calls some system action - `subscription-manager register`) 
 the state has been changed. You can see a lot of `subscription-manager register/unregister` 
