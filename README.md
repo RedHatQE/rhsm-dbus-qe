@@ -28,12 +28,15 @@ There are three main players in this testing game:
 The base requirement is 
   - `Python3.6` or later
   - [Pipenv](https://github.com/pypa/pipenv)
-  
+
+> An important part of the testing game is `RHSM-services` message broker. 
+> It is necessary to install in on a tested machine. see [https://github.com/RedHatQE/rhsm-services](RHSM Services Git Repo)
+
 ## Installation
 
 ```shell
 # install python3.6 and pipenv
-cd ~/src/rhsm-dbus-qd
+cd ~/src/rhsm-dbus-qe
 pipenv install
 ```
 
@@ -41,7 +44,20 @@ pipenv install
 
 The proper tests start once you run the right user scenario.
 
-## What is the benefit of reactive approach for testing?
+1. run the testware
+
+```shell
+# run Tier1 Test Suite
+cd ~/src/rhsm-dbus-qe
+pipenv run python3.6 src/suite/tier1.py
+```
+
+2. 
+
+## What is the Benefit of Reactive Approach for Testing?
+
+> Reactive programming offers an easy way to data mine. It offers a pile of methods to transform,merge,aggregate strea
+ms of events.
 
 You know, the most expensive task is to prepare a tested system into the right state.
 
@@ -90,6 +106,7 @@ send a message 'it was pleasure to run the script - see you soon!'
    
 In this approach a system action `busctl tree` was run just once and it's result was used by two tests.
 
+
 ### Summary
 In reactive way:
 - a test just listen for the right messages
@@ -102,5 +119,6 @@ In reactive way:
 - this approach offers a new way to cooperate: 
   reporters often send a bug with a short shell based scenario to reproduce a bug.
   Tester can reuse the shell scenario and it is necessary to extend it by signals emitting only.
-
-> Reactive programming offers an easy way to data mine. It offers a pile of methods to transform,merge,aggregate streams of events.
+- two people can work together on one test 
+   - the first one can write user scenario and signals emitting
+   - the second one can write test analysis
