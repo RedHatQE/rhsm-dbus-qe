@@ -15,9 +15,9 @@ and `REST` based services for synchronous test operations. The main purpose of t
 It is necessary to understand a way how this testing game is written before you run the tests.
 
 There are three main players in this testing game:
-- =user scenario= - a shell script or ansible script
-- =message broker= `RHSM Service` - a central piece of the game
-- =a test= - an observer that takes signals from the message broker and analyzes them 
+- **user scenario** - a shell script or ansible script
+- **message broker** `RHSM Service` - a central piece of the game
+- **a test** - an observer that takes signals from the message broker and analyzes them 
 
 > A testing process is driven by user scenarion. Shortly - a test does not run any action in a tested system. 
 > It does not change a system state at all. It just receives signals from the system and analyzes them.
@@ -52,7 +52,13 @@ cd ~/src/rhsm-dbus-qe
 pipenv run python3.6 src/suite/tier1.py
 ```
 
-2. 
+2. run a user scenario
+```shell
+ssh root@centos7.example.com
+/opt/rhsm-services/resources/scenario/dbus/busctl-tree.sh
+```
+
+> Testware runs forever listening incomming signals. The only thing you have to run again and again is the right scenario.
 
 ## What is the Benefit of Reactive Approach for Testing?
 
