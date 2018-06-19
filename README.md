@@ -86,7 +86,7 @@ verify that 'com.redhat.RHSM1.Product' exists in the response
 be happy when the interface exists
 ```
 
-With this approach a command `busctl tree` was run twice. You know, system actions are expensive.
+The command `busctl tree` was run twice using the traditional approach.
 
 The reactive approach looks like this:
 
@@ -98,14 +98,16 @@ run a command `busctl tree`
 send a response of the command into testware
 send a message 'it was pleasure to run the script - see you soon!'
 ```
+
 2. let testware listen for the right messages
 3. when a message 'hey, busctl-tree is in the air!' appears
    those two tests awake and start collecting the messages
 4. once the script stops emitting messages the two tests analyze the messages.
    You know, there is a message 'response of busctl tree command'
    
-In this approach a system action `busctl tree` was run just once and it's result was used by two tests.
+The command `busctl tree` was run just once using the reactive approach and a result of the command was used by two tests.
 
+> You know - system actions are expensive!
 
 ### Summary
 In reactive way:
@@ -113,12 +115,12 @@ In reactive way:
 - a test is waken up once the right script is run
 - testing game is just about a flow of data - it is a sort of data mining
 - a testing game is split into independent design tasks:
-   - write user scenario
-   - send informations from the system into testware
+   - to write user scenario
+   - to send informations from the system into testware
    - let testware shake it's way and analyze the informations
-- this approach offers a new way to cooperate: 
-  reporters often send a bug with a short shell based scenario to reproduce a bug.
-  Tester can reuse the shell scenario and it is necessary to extend it by signals emitting only.
+- this approach offers a new way to cooperate - reporters often send a bug 
+  with a short shell based scenario to reproduce a bug.
+  A tester can reuse the shell scenario and it is necessary to extend it by signals emitting only.
 - two people can work together on one test 
    - the first one can write user scenario and signals emitting
    - the second one can write test analysis
