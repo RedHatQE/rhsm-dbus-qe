@@ -2,10 +2,12 @@ from funcy import complement
 from .types import TestRun, Result, Scenario
 from colorama import Fore
 
-def start_of_scenario(scenario):
+def start_of_scenario(scenario=None):
     def handler(ioTuple):
-        return ioTuple.msg.get('scenario') == scenario \
-            and ioTuple.msg.get('type') == "start of scenario"
+        if scenario:
+            return ioTuple.msg.get('scenario') == scenario \
+                and ioTuple.msg.get('type') == "start of scenario"
+        return ioTuple.msg.get('type') == "start of scenario"
     return handler
 
 def end_of_scenario(scenario, scenario_id):

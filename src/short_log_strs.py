@@ -13,6 +13,8 @@ def colored_short_status(status):
 
 @singledispatch
 def short_log_str(x):
+    """ This method provides a short str reprezentation of an object.
+    The string reprezentation is used for short reporting how a testing goes on"""
     return "the method short_log_str is used for printing a results"
 
 

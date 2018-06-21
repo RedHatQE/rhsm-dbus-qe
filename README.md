@@ -144,3 +144,25 @@ In reactive way:
 - two people can work together on one test 
    - the first one can write user scenario and signals emitting
    - the second one can write test analysis
+
+# Interesting Parts of the Code
+## Singledispatch for a generic method `short_log_str`
+(Single Dispatch in Python)[https://docs.python.org/3.5/library/functools.html#functools.singledispatch]
+
+See `src/short_log_strs.py`
+## How to Feed Reactive Testware using Asyncio
+Reactive testware is hungry for events. The events come from `websocket` services of a server `RHSM-services`.
+There is a asyncio loop that runs feeders and the feeders shake by reactive testware.
+
+See `src/suite/tier1.py#def run(loop)`.
+
+A socket that data from IO world go to the reactive testware:
+
+```python
+async def feed(path, stream):
+    async with websockets.connect(urljoin(os.getenv('RHSM_SERVICES_URL'),path)) as ws:
+        async for msg in ws:
+            # a reactive stream starts shaking
+            stream.on_next(IOTuple(ws,path,json.loads(msg)))
+
+```
